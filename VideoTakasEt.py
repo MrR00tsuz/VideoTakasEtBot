@@ -5,7 +5,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-bot = Bot(token='6171809820:AAFhEFCNm-LOucA7g0UeT3ODuDRg7YZVakg')
+bot = Bot(token='BOT_TOKEN')
 dp = Dispatcher(bot)
 
 keyboard_inline = InlineKeyboardMarkup()
@@ -18,7 +18,7 @@ keyboard1.add("📜 Kurallar 📜", "🎥 Video Takas Et 📷")
 
 waiting_for_video = {}  # Kullanıcıların video göndermesini beklemek için kullanılacak bir sözlük
 
-ADMIN_KEY = "Mrishomy"  # Admin anahtar kelimesi
+ADMIN_KEY = "admin123"  # Admin anahtar kelimesi
 
 @dp.message_handler(commands=['random'])
 async def random_answer(message: types.Message):
@@ -88,7 +88,7 @@ async def admin_command(message: types.Message):
 @dp.message_handler()
 async def kb_answer(message: types.Message):
     if message.text == '📜 Kurallar 📜':
-        await message.reply("18 Video,CP Gönderen Kişiler POLİSE İHBAR EDİLECEKTİR")
+        await message.reply("KURALARI YAZIN")
     elif message.text == '🎥 Video Takas Et 📷':
         user_id = message.from_user.id
         if user_id in waiting_for_video:
